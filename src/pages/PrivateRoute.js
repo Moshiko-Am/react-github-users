@@ -9,7 +9,11 @@ const PrivateRoute = ({ children, ...rest }) => {
 		<Route
 			{...rest}
 			render={() => {
-				return isUser ? children : <Redirect to="/login" />;
+				return isUser ? (
+					children
+				) : (
+					<Redirect to="/react-github-users/login" />
+				);
 			}}
 		></Route>
 	);
